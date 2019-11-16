@@ -1,0 +1,30 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  
+
+  .root-card {
+    margin: 2%;
+  }
+
+  .onboard-style{
+    width: 700px;
+  }
+  .input-section {
+    width:500px;
+  }
+  .mat-card-content {
+    margin-left:20px;
+  }
+  .cardmargin {
+    margin-top:5px;
+  }
+
+  .mat-form-field {
+    margin:10px;
+  }

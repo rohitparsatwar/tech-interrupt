@@ -1,0 +1,23 @@
+<mat-card class="feed-card" style="width: 80%; margin: 50px 10% 10px 10%">
+    <div class="feed-header">
+      <mat-card-header style="position:relative;border-bottom: solid rgba(0,0,0,.15);">
+          <div mat-card-avatar class="header-image" style="height: 45px;width:45px;margin:0;"><img *ngIf="feedPartnerData.profileBgImgURL" [src]="feedPartnerData.profileBgImgURL" style="height: 100%; width: 100%;"></div>
+          <mat-card-title>{{feedPartnerData.title}}</mat-card-title>
+          <mat-card-subtitle>{{feedPartnerData.businessUnit}}</mat-card-subtitle>
+      </mat-card-header>
+    </div>
+    <div class="feed-data">
+      <p *ngIf="(feed !=null || feed !== undefined)" class="break-words white-space-pre-wrap mb5 t-14 t-black--light t-normal" >{{feed.feed}}</p>
+    </div>
+    <mat-card class="feed-card">
+    <div class="feed-comments" style="width: 100%;">
+      <div class="feed-comment-area">
+        <div mat-card-avatar class="header-image" style="height: 30px;width:30px;margin:0;"><img [src]="currentPartner.profileBgImgURL" style="height: 100%; width: 100%;"></div>
+        <input #commentInput (keyup.enter)="addComment(commentInput.value);commentInput.value='';" class="feed-comment-input" type="text" placeholder="Write a comment..." aria-label="Comment" />
+      </div>
+      <div class="feed-comment" *ngFor="let comment of feed.comments">
+        <div mat-card-avatar class="header-image" style="height: 30px;width:30px;margin:0;"><img [src]="comment.profile.profileBgImgURL" style="height: 100%; width: 100%;"></div>
+        <p class="break-words white-space-pre-wrap mb5 t-14 t-black--light t-normal comment-text" >&nbsp;&nbsp;&nbsp;&nbsp;{{comment.comment}}</p>
+      </div>
+    </div></mat-card>
+  </mat-card>

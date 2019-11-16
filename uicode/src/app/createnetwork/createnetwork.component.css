@@ -1,0 +1,73 @@
+
+
+.network-form {
+  min-width: 150px;
+  width: 100%;
+}
+
+.network-full-width {
+  width: 100%;
+}
+
+.network-button:hover {
+  color: blue;
+}
+
+button:disabled,
+button[disabled]{
+  color: #AAAA !important;
+}
+  
+.break-words {
+  overflow-wrap: break-word!important;
+  word-wrap: break-word!important;
+  word-break: break-word!important;
+}
+.white-space-pre-wrap {
+  white-space: pre-wrap!important;
+}
+.mb5 {
+  margin-bottom: 24px!important;
+}
+.t-14 {
+  font-size: 1rem;
+  line-height: 1.42857;
+}
+.t-normal {
+  font-weight: 400;
+}
+.t-black--light {
+  color: rgba(0,0,0,.6);
+}
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.network-button{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  background: 0px 0px;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  overflow: visible;
+}

@@ -1,0 +1,126 @@
+<div class='main-div'>
+  <mat-toolbar color="primary" style="height: 50px; min-height: 50px;">
+    <mat-toolbar-row style="height: 50px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdxR4kezXFzPqVPy_nH7-_xNiJtz1enrNLfx-OZJo2K3dEbjte" style="height: 35px; width: 35px;border-radius: 10%;">
+        <span style="height: 35px; margin-left: 5px; width: 400px; position: relative;">
+            <!-- <input type="search" style="height: 45px; width: 45px;" [(ngModel)]="search"> -->
+            <input class="header-search-input" type="text" placeholder="Search" aria-label="Search" mdbInput>
+            <i class="material-icons" style="color: rgba(0,0,0,.87); position: absolute; top: 7px; right: 0px;">search</i>
+        </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div style="margin-top: 20px;">
+    <mat-card class="partner-card">
+      <div class="mat-card-image" tabindex="-1" style="height: 191px;">
+        <img *ngIf='partnerData.profileImgURL != null' mat-card-image [src]="partnerData.profileImgURL" alt="Partner Photo" 
+            style="position: absolute;top:-199.015625px;">
+      </div>
+      <div class="partner-header">
+        <mat-card-header>
+            <div mat-card-avatar class="header-image"><img *ngIf='partnerData.profileBgImgURL != null' [src]="partnerData.profileBgImgURL" style="height: 100%; width: 100%;"></div>
+            <mat-card-title>{{partnerData.title}}</mat-card-title>
+            <mat-card-subtitle>{{partnerData.subTitle}}</mat-card-subtitle>
+        </mat-card-header>
+      </div>
+      <mat-card-actions>
+        <button mat-button class="header-button">
+            <mat-icon _ngcontent-wmw-c22="" aria-hidden="false" aria-label="Example thumbs up SVG icon" class="mat-icon notranslate mat-icon-no-color" role="img" svgicon="thumbs-up">
+                <svg xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z"></path>
+                </svg>
+            </mat-icon> LIKE</button>
+        <button mat-button class="header-button">
+            <mat-icon _ngcontent-wmw-c22="" aria-hidden="false" aria-label="Example share SVG icon" class="mat-icon notranslate mat-icon-no-color" role="img" svgicon="share">
+                <svg xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M14.68,12.621c-0.9,0-1.702,0.43-2.216,1.09l-4.549-2.637c0.284-0.691,0.284-1.457,0-2.146l4.549-2.638c0.514,0.661,1.315,1.09,2.216,1.09c1.549,0,2.809-1.26,2.809-2.808c0-1.548-1.26-2.809-2.809-2.809c-1.548,0-2.808,1.26-2.808,2.809c0,0.38,0.076,0.741,0.214,1.073l-4.55,2.638c-0.515-0.661-1.316-1.09-2.217-1.09c-1.548,0-2.808,1.26-2.808,2.809s1.26,2.808,2.808,2.808c0.9,0,1.702-0.43,2.217-1.09l4.55,2.637c-0.138,0.332-0.214,0.693-0.214,1.074c0,1.549,1.26,2.809,2.808,2.809c1.549,0,2.809-1.26,2.809-2.809S16.229,12.621,14.68,12.621M14.68,2.512c1.136,0,2.06,0.923,2.06,2.06S15.815,6.63,14.68,6.63s-2.059-0.923-2.059-2.059S13.544,2.512,14.68,2.512M5.319,12.061c-1.136,0-2.06-0.924-2.06-2.06s0.923-2.059,2.06-2.059c1.135,0,2.06,0.923,2.06,2.059S6.454,12.061,5.319,12.061M14.68,17.488c-1.136,0-2.059-0.922-2.059-2.059s0.923-2.061,2.059-2.061s2.06,0.924,2.06,2.061S15.815,17.488,14.68,17.488"></path>
+                </svg>
+            </mat-icon> SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card class="down-card">
+      <mat-card class="sideNav-card">
+        <div *ngFor="let item of sideMenuItems">
+          <div class="items-detail">
+            <button mat-button class="header-button" [routerLink]="[{outlets:{sub: [item.id]}}]" [disabled]="!item.enable" (click)="showContent(item)">
+              {{item.name}}
+              <i class="material-icons" style="padding-top: 5px;">{{item.icon}}</i>
+            </button>
+          </div>
+          <div class="items-detail" *ngFor="let child of item.childMenuItems">
+            <div *ngIf="child.enable">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <button mat-button class="header-button" [disabled]="!child.enable" (click)="showContent(child)">
+              {{child.name}}
+              <i class="material-icons" style="padding-top: 5px;">{{child.icon}}</i>
+            </button>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="content-card">
+
+        <router-outlet name='sub'></router-outlet>
+        <!-- <h4>{{content}}</h4>
+        <div *ngIf="content=='About'">
+          <p *ngIf="(partnerData !=null || partnerData !== undefined) && partnerData.aboutText != null"
+            class="break-words white-space-pre-wrap mb5 t-14 t-black--light t-normal">{{partnerData.aboutText}}</p>
+        </div>
+
+        <div *ngIf="content=='Create New Network...'">
+          <form #f="ngForm" (ngSubmit)="createNetwork(f)" novalidate class="network-form">
+            <mat-form-field class="network-full-width">
+              <input matInput placeholder="Network Name" name="name" [(ngModel)]="network.name" required>
+            </mat-form-field>
+
+            <mat-form-field class="network-full-width">
+              <textarea matInput placeholder="Network Description" name="description"
+                [(ngModel)]="network.description"></textarea>
+            </mat-form-field>
+            <mat-form-field class="partner-chip-list network-full-width">
+              <mat-chip-list #chipList aria-label="partner selection">
+                <mat-chip *ngFor="let partner of selectedPartners" [selectable]="selectable" [removable]="removable"
+                  (removed)="removePartnerToken(partner)">
+                  {{partner}}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="Add partner..." #partnerInput [formControl]="partnerCtrl" [matAutocomplete]="auto"
+                  [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes">
+              </mat-chip-list>
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)="addSelectedPartner($event)">
+                <mat-option *ngFor="let partner of filteredPartners | async" [value]="partner">
+                  {{partner}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            <button mat-button class="header-button" type="submit">
+              SUBMIT
+            </button>
+            <button mat-button class="header-button" type="button" (click)="cancelNetwork()">
+              CANCEL
+            </button>
+          </form>
+        </div>
+        <div *ngIf="content=='My Profile'">
+          <div class="container content">
+            <div class="row">
+              <div class="col-md-6"></div>
+              <div class="col-md-6">
+                <button mat-button class="btn btn-success" type="submit" style="float:right">
+                  Approved
+                </button>
+
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <app-myprofile></app-myprofile>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card> -->
+      </mat-card>
+    </mat-card>
+  </div>
+  
+</div>

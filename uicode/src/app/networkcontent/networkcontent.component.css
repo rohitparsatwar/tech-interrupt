@@ -1,0 +1,59 @@
+
+  .feed-header-search{
+    margin-top: 10px !important;
+    border: none;
+    padding: 5px 0px 0px 10px;
+    font-size: initial;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+
+    border-radius: 2px;
+    border-color: #fff;
+    border-style: solid;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15);
+    margin: auto;
+    /* min-width: 90% !important; */
+    max-width: 90% !important;
+    width: 90% !important;
+    min-height: 35px;
+    display: block;
+  }
+  
+  .header-button:hover {
+    color: blue;
+  }
+
+  .header-button{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    background: 0px 0px;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+  }
+  
+  .post-button{
+    color: white;
+    margin-top: 10px;
+    border: solid;
+    background-color: #283e4a;
+    border-color: #283e00;
+  }

@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: auto;background-color: #1776BF }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.sm-button {
+    line-height: 30px;
+    padding: 0 .75rem;
+}
+
+.dlt-button-primary {
+    color: #fff;
+    background-color: #1776BF;
+}
+
+.dlt-button {
+    text-decoration: none;
+    padding: 0 1rem;
+    font-family: "Roboto","Helvetica",Arial,sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 38px;
+    -moz-transition: .25s ease-in;
+    -o-transition: .25s ease-in;
+    -webkit-transition: .25s ease-in;
+    transition: .25s ease-in;
+    cursor: pointer;
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+    outline-offset: -2px;
+    margin: 0;
+    display: inline-block;
+}

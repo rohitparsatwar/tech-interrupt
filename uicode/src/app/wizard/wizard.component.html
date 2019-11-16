@@ -1,0 +1,230 @@
+<mat-card class="root-card">
+    <mat-card-header>
+       
+        <mat-card-title> <img style="width: 120px;margin-bottom: -10px;" src="https://delite.eur.ad.sag/wp-content/uploads/2019/05/SAG-LOGO-DO-1.svg">  
+          <span style="color:#1776BF">webMethods iPaaS MarketPlace
+          </span></mat-card-title>
+        <mat-card-subtitle>Welcome to webMethods iPaaS MarketPlace. Help us with basic details to get onboard soon </mat-card-subtitle>
+      </mat-card-header>
+<mat-card-content>
+<div>
+<mat-horizontal-stepper>
+    <mat-step label="Personal Information" state="vnj_contact">
+        <mat-card class="Personal-info-card onboard-style cardmargin">
+            <mat-card-header>
+              <mat-card-title>Corporation</mat-card-title>
+              <mat-card-subtitle>Provide Corporation details</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="input-section">
+                    <mat-form-field>
+                      <input matInput placeholder="Corporation Name">
+                    </mat-form-field>                  
+                    <mat-form-field>
+                        <input matInput placeholder="Organization Unit Name">
+                    </mat-form-field>
+                  </div>
+            </mat-card-content>
+          </mat-card>
+        <br /><br />
+        <div>
+          <button class="dlt-button dlt-button-primary sm-button" mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step label="Address Information" state="vnj_contact">
+        <mat-card class="address onboard-style cardmargin">
+            <mat-card-header>
+              <mat-card-title>Address Information</mat-card-title>
+              <mat-card-subtitle>Provide address information</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="input-section">
+                    <mat-form-field>
+                      <input matInput placeholder="Address">
+                    </mat-form-field>                  
+                    <mat-form-field>
+                        <input matInput placeholder="Address Line 2">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Address Line 3">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="State/Province">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="City">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="PostalCode">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Country">
+                    </mat-form-field>
+                  </div>
+            </mat-card-content>
+          </mat-card>
+        <br />
+        <div>
+          <button class="dlt-button dlt-button-primary sm-button" mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step label="Contact Information" state="vnj_contact">
+          <mat-card class="address onboard-style cardmargin">
+              <mat-card-header>
+                <mat-card-title>Address Information</mat-card-title>
+                <mat-card-subtitle>Provide contact information</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                  <div class="input-section">
+                      <mat-form-field>
+                        <input matInput placeholder="ContactType">
+                      </mat-form-field>                  
+                      <mat-form-field>
+                          <input matInput placeholder="Role">
+                      </mat-form-field>
+                      <mat-form-field>
+                          <input matInput placeholder="FirstName">
+                      </mat-form-field>
+                      <mat-form-field>
+                          <input matInput placeholder="LastName">
+                      </mat-form-field>
+                      <mat-form-field>
+                          <input matInput placeholder="E-Mail">
+                      </mat-form-field>
+                      <mat-form-field>
+                          <input matInput placeholder="Telephone">
+                      </mat-form-field>
+                      <mat-form-field>
+                          <input matInput placeholder="Fax">
+                      </mat-form-field>
+                      <mat-form-field>
+                          <input matInput placeholder="Country">
+                      </mat-form-field>                      
+                    </div>
+              </mat-card-content>
+            </mat-card>
+          <br />
+          <div>
+            <button class="dlt-button dlt-button-primary sm-button" mat-button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+      <mat-step label="Channels" state="chat">
+        <p> Provide Channel details </p>
+        <mat-card class="address onboard-style cardmargin">
+            <mat-card-header>
+              <mat-card-title>Channel Information</mat-card-title>
+              <mat-card-subtitle>Provide Channel information</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <button class="dlt-button sm-button" >Add Channel</button>
+                <div class="input-section">
+                    <mat-form-field>
+                      <input matInput placeholder="Protocol">
+                    </mat-form-field>                  
+                    <mat-form-field>
+                        <input matInput placeholder="Host">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Port">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Location">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Username">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Password">
+                    </mat-form-field>                     
+                  </div>
+            </mat-card-content>
+          </mat-card>
+        <br />
+        <div>
+          <button class="dlt-button dlt-button-primary sm-button" mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step label="Certificates">
+        <p> Upload your certificates </p>
+        <mat-card class="Personal-info-card onboard-style cardmargin">
+          <mat-card-header>
+            <mat-card-subtitle>Provide certificate details</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+              <div class="input-section">
+                  Drag and drop certificates
+                </div>
+          </mat-card-content>          
+        </mat-card>
+        <br/><br/>
+        <div>
+            <button class="dlt-button dlt-button-primary sm-button" mat-button matStepperNext>Next</button>
+          </div>
+      </mat-step>
+      <mat-step label="EDI" optional>
+        <p> Provide basic EDI Information</p>
+        <mat-card class="Personal-info-card onboard-style cardmargin">
+          <mat-card-header>
+            <mat-card-title>EDI</mat-card-title>
+            <mat-card-subtitle>Provide EDI details</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+              <div class="input-section">
+                  <mat-form-field>
+                    <input matInput placeholder="SSL">
+                  </mat-form-field>                  
+                  <mat-form-field>
+                      <input matInput placeholder="Encrytion">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Sign">
+                </mat-form-field>
+                </div>
+          </mat-card-content>
+        </mat-card>
+        <br/><br/>
+        <div>
+            <button class="dlt-button dlt-button-primary sm-button" mat-button matStepperNext>Next</button>
+          </div>
+      </mat-step>
+      <mat-step label="AS2" optional>
+        <p> Provide basic AS2 Information</p>
+        <mat-card class="Personal-info-card onboard-style cardmargin">
+          <mat-card-header>
+            <mat-card-title>AS2</mat-card-title>
+            <mat-card-subtitle>Provide AS2 details</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+              <div class="input-section">
+                  <mat-form-field>
+                    <input matInput placeholder="AS2 Sender">
+                  </mat-form-field>                  
+                  <mat-form-field>
+                      <input matInput placeholder="AS2 Receiver">
+                  </mat-form-field>
+                </div>
+          </mat-card-content>
+        </mat-card>
+        <br/><br/>
+        <div>
+            <button class="dlt-button dlt-button-primary sm-button" mat-button matStepperNext>Next</button>
+          </div>
+      </mat-step>
+      
+      <mat-step label="Done">
+        <p>You're welcome.</p>
+        <button class="dlt-button dlt-button-primary sm-button" mat-button matStepperNext (click)="completeProcess()">Complete Process</button>
+      </mat-step>
+      <!-- Icon overrides. -->
+      <ng-template matStepperIcon="vnj_contact">
+          <mat-icon svgIcon="sample_icon" ></mat-icon>
+      </ng-template>
+      <ng-template matStepperIcon="chat">
+          <mat-icon svgIcon="sample_icon" ></mat-icon>
+          
+      </ng-template>
+  </mat-horizontal-stepper>
+
+</div>
+</mat-card-content>
+</mat-card>

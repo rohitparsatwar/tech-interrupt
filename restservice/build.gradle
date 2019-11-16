@@ -1,0 +1,56 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+//apply plugin: 'jetty'
+apply plugin: 'org.akhikhl.gretty'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+repositories {
+	//mavenCentral()
+	jcenter()
+}
+
+buildscript {
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath 'org.akhikhl.gretty:gretty:+'
+	}
+}
+
+dependencies {
+	compile 'com.sun.jersey:jersey-server:1.9'
+	compile 'com.sun.jersey:jersey-json:1.9'
+	compile group: 'org.apache.solr', name: 'solr-solrj', version: '5.5.1'
+	compile 'javax.servlet:servlet-api:2.5'
+	compile 'org.mongodb:mongodb-driver:3.2.2'
+	compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.6.1'
+	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.6.1'
+	compile group: 'commons-codec', name: 'commons-codec', version: '1.5'
+	compile 'junit:junit:4.12'
+	testCompile 'org.mockito:mockito-core:2.7.22'
+	compile 'org.eclipse.jetty:jetty-servlets:9.2.5.v20141112'
+
+	//compile 'net.coobird:thumbnailator:0.4.8'
+
+
+}
+
+
+gretty {
+	//   port = 8080
+	//   host = localhost
+	httpPort = 9090
+	contextPath = 'pmaas'
+	servletContainer = 'jetty9'
+}
+war {
+	archiveName 'pmaas.war'
+}
+task all(dependsOn: [
+	war
+]){
+}

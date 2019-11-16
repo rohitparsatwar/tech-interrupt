@@ -1,0 +1,50 @@
+<mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">rss_feed</mat-icon>
+        Feeds
+      </ng-template>
+      <div style="display: inline-flex;width: 100%;">
+        <textarea class="feed-header-search" type="text" placeholder="Post Feed.." aria-label="Post Feed" mdbInput #feedInput></textarea>
+        <button mat-button class="header-button post-button" (click)="postFeed(feedInput.value);feedInput.value='';">POST</button>
+      </div>
+      <ng-container *ngFor="let feed of feeds">
+        <app-networkfeed [feed]='feed' [currentPartner]='partnerData' [currentNetwork]='networkData'></app-networkfeed>
+      </ng-container>
+    </mat-tab>
+  
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">people_outline</mat-icon>
+        Partners
+      </ng-template>
+      <div style="margin-top: 50px;">
+        <div class="partner-header" *ngFor="let partner of networkPartners">
+          <mat-card class="partner-card" style="width: 50%; margin: 10px;">
+            <mat-card-header style="position:relative;">
+                <div mat-card-avatar class="header-image" style="height: 45px;width:45px;margin:0;"><img *ngIf="partner.profileBgImgURL" [src]="partner.profileBgImgURL" style="height: 100%; width: 100%;"></div>
+                <mat-card-title>{{partner.title}}</mat-card-title>
+                <mat-card-subtitle>{{partner.businessUnit}}</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+        </div>
+      </div>
+    </mat-tab>
+  
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">more_horiz</mat-icon>
+        Details
+      </ng-template>
+      <div class="details-header" style="margin-top: 50px;">
+        <mat-card class="partner-card" style="width: 90%; margin: 10px auto;">
+          <mat-card-header *ngIf="networkData != null || networkData!=undefined" style="position:relative;">
+            Network Name: {{networkData.name}}
+          </mat-card-header>
+          <mat-card-header *ngIf="networkData != null || networkData!=undefined" style="position:relative;">
+            B2B Link: http://vmb2bctp02/b2b
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>

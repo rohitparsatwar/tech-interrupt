@@ -1,0 +1,86 @@
+<div>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <button mat-button class="btn btn-success" type="submit" style="float:right">
+                Approved
+            </button>
+
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+        </div>
+    </div>
+    <mat-accordion>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                Corporation Details
+            </mat-expansion-panel-header>
+            <mat-card class="content-card" style="background-color: floralwhite;">
+                <div class="row mt-3">
+                    <div class="col-md-6">Corporation Name: {{myprofile.corporationName}} </div>
+                    <div class="col-md-6">Organization Unit Name: {{myprofile.organizationName}} </div>
+                </div>
+            </mat-card>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                Address
+            </mat-expansion-panel-header>
+            <mat-card class="content-card" style="background-color: floralwhite;">
+                <div class="row">
+                    <div class="col-md-6">Address: {{myprofile.address}} </div>
+                    <div class="col-md-6">Address Line 2: {{myprofile.addressLine2}} </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">Address Line 3: {{myprofile.addressLine3}} </div>
+                    <div class="col-md-6">City: {{myprofile.csity}} </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">State/Province: {{myprofile.state}} </div>
+                    <div class="col-md-6">Postal Code: {{myprofile.postalCode}} </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">Country: {{myprofile.country}} </div>
+                    <div class="col-md-6"> </div>
+                </div>
+            </mat-card>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                Contact
+            </mat-expansion-panel-header>
+            <mat-card class="content-card" style="background-color: floralwhite;">
+                <div class="row">
+                    <div class="col-md-6">First Name: {{myprofile.firstName}} </div>
+                    <div class="col-md-6">Last Name: {{myprofile.lastName}} </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">E-Mail: {{myprofile.email}} </div>
+                    <div class="col-md-6">Telephone: {{myprofile.telephone}} </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">Fax : {{myprofile.fax}} </div>
+                    <div class="col-md-6">Country: {{myprofile.country}} </div>
+                </div>
+            </mat-card>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                Channel Information
+            </mat-expansion-panel-header>
+            <mat-card class="content-card" style="background-color: floralwhite;">
+                <div class="row">
+                    <div class="col-md-6">Delivery Method: {{myprofile.deliveryMethod}} </div>
+                    <div class="col-md-6">Endpoint: {{myprofile.endpoint}} </div>
+                </div>
+            </mat-card>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

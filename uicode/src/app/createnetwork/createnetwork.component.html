@@ -1,0 +1,40 @@
+
+<form #f="ngForm" (ngSubmit)="createNetwork(f)" novalidate class="network-form">
+    <mat-form-field class="network-full-width">
+        <input matInput placeholder="Network Name" name="name" [(ngModel)]="network.name" required>
+    </mat-form-field>
+
+    <mat-form-field class="network-full-width">
+        <textarea matInput placeholder="Network Description"  name="description"  [(ngModel)]="network.description" ></textarea>
+    </mat-form-field>
+    <mat-form-field class="partner-chip-list network-full-width">
+        <mat-chip-list #chipList aria-label="partner selection">
+            <mat-chip
+            *ngFor="let partner of selectedPartners"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="removePartnerToken(partner)">
+            {{partner}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input
+            placeholder="Add partner..."
+            #partnerInput
+            [formControl]="partnerCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="addSelectedPartner($event)">
+            <mat-option *ngFor="let partner of filteredPartners | async" [value]="partner">
+            {{partner}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <button mat-button class="network-button" type="submit">
+        SUBMIT
+    </button>
+    <button mat-button class="network-button" type="button" (click)="cancelNetwork()">
+            CANCEL
+    </button>
+</form>

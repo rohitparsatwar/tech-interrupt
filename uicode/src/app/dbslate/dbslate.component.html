@@ -1,0 +1,71 @@
+<mat-card class="root-card" style="margin:2%">
+    <mat-card-header>
+        <mat-card-title>
+            <span style="color:#1776BF"> DB Schema Conversion Tool</span></mat-card-title>
+        <mat-card-subtitle>Convert and test scripts across dbms </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="root-card" style="margin:2%">
+    <mat-card-header>
+        <mat-card-title>
+            <span style="color:#1776BF">Oracle DBMS SQL Script </span></mat-card-title>
+        <mat-card-subtitle>Source RDBMS</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <textarea id="oratext" rows="5" cols="150" [(ngModel)]="sourceText"></textarea>
+    </mat-card-content>
+
+    <button mat-raised-button color="primary" (click)="processRequest()"> Process Request</button>
+</mat-card>
+
+<mat-card style="margin:2%;">
+    <mat-card-header>
+        <mat-card-title>
+            <span style="color:#1776BF">MySQL RDBMS </span></mat-card-title>
+        <mat-card-subtitle>Generated and tested MYSQL</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-grid-list cols="2" rowHeight="5:1">
+            <mat-grid-tile>
+                <div *ngIf="mysqlText==''">
+                    <h4> Converted script</h4>
+                </div>
+                <p style="color:blue">{{mysqlText}}</p>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div *ngIf="mysqlText==''">
+                    <h4> Execution result </h4>
+                </div>
+                <p style="color:red">{{mysqlRunResult}}</p>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>
+
+
+<mat-card style="margin:2%;">
+        <mat-card-header>
+            <mat-card-title>
+                <span style="color:#1776BF">SQLServer RDBMS </span></mat-card-title>
+            <mat-card-subtitle>Generated and tested SqServer</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-grid-list cols="2" rowHeight="5:1">
+                <mat-grid-tile>
+                    <div *ngIf="sqlServerText==null">
+                        <h4> Converted script</h4>
+                    </div>
+                    <p style="color:blue">{{sqlServerText}}</p>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div *ngIf="sqlServerRunResult==null">
+                        <h4> Execution result </h4>
+                    </div>
+                    <p style="color:red">{{sqlServerRunResult}}</p>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
