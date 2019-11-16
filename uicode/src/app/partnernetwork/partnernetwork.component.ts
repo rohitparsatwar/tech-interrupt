@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { DataService } from '../data.service';
 
 @Component({
@@ -10,8 +10,25 @@ import { DataService } from '../data.service';
 })
 export class PartnernetworkComponent implements OnInit {
   
-  constructor(private http: HttpClient,private route: ActivatedRoute, private dataService: DataService) {
-    
+  mySubscription: any;
+
+  constructor(private http: HttpClient,private route: ActivatedRoute,private router: Router, private dataService: DataService) {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+
+    this.mySubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Trick the Router into believing it's last link wasn't previously loaded
+        this.router.navigated = false;
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.mySubscription) {
+      this.mySubscription.unsubscribe();
+    }
   }
   
   
@@ -101,7 +118,6 @@ export class PartnernetworkComponent implements OnInit {
   refreshPage(){
     console.log("refreshing Parent");
     this.getPartnerNetworkURL();
-    this.content = "About";
   }
 
 }
