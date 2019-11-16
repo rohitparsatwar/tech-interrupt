@@ -98,12 +98,9 @@ export class PartnernetworkComponent implements OnInit {
    }
   }
   
-  refreshPage(event:string){
+  refreshPage(){
     console.log("refreshing Parent");
-    console.log(event);
-    if(event == "SUCCESS"){
-      this.getPartnerNetworkURL();
-    }
+    this.getPartnerNetworkURL();
     this.content = "About";
   }
 

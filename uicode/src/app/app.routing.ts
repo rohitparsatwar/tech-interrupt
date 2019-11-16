@@ -8,7 +8,7 @@ import { CreatenetworkComponent } from './createnetwork/createnetwork.component'
 
 const routes: Routes = [
     {
-        path: 'network',
+        path: 'about',
         component: PartnernetworkComponent,
     },
     {
