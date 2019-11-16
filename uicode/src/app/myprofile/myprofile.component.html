@@ -1,21 +1,7 @@
 <div>
-    <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6">
-            <button mat-button class="btn btn-success" type="submit" style="float:right">
-                Approved
-            </button>
+    <mat-accordion multi="true">
 
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-md-6"></div>
-        <div class="col-md-6">
-        </div>
-    </div>
-    <mat-accordion>
-
-        <mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true">
             <mat-expansion-panel-header>
                 Corporation Details
             </mat-expansion-panel-header>
@@ -27,7 +13,7 @@
             </mat-card>
         </mat-expansion-panel>
 
-        <mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true">
             <mat-expansion-panel-header>
                 Address
             </mat-expansion-panel-header>
@@ -52,7 +38,7 @@
 
         </mat-expansion-panel>
 
-        <mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true">
             <mat-expansion-panel-header>
                 Contact
             </mat-expansion-panel-header>
@@ -71,14 +57,22 @@
                 </div>
             </mat-card>
         </mat-expansion-panel>
-        <mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true">
             <mat-expansion-panel-header>
                 Channel Information
             </mat-expansion-panel-header>
             <mat-card class="content-card" style="background-color: floralwhite;">
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col-md-6">Delivery Method: {{myprofile.deliveryMethod}} </div>
                     <div class="col-md-6">Endpoint: {{myprofile.endpoint}} </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">port: {{myprofile.port}} </div>
+                    <div class="col-md-6"> </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">username: {{myprofile.username}} </div>
+                    <div class="col-md-6">password: {{myprofile.password}} </div>
                 </div>
             </mat-card>
         </mat-expansion-panel>

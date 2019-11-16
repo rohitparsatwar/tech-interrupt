@@ -5,12 +5,9 @@ import { WizardComponent } from './wizard/wizard.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { DbslateComponent } from './dbslate/dbslate.component';
 import { CreatenetworkComponent } from './createnetwork/createnetwork.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
-    {
-        path: 'about',
-        component: PartnernetworkComponent,
-    },
     {
         path: 'profile/:id',
         component: PartnernetworkComponent,
@@ -19,12 +16,17 @@ const routes: Routes = [
                 path: 'myprofile',
                 component: MyprofileComponent,
                 outlet: 'sub'
-              },
-              {
+            },
+            {
                 path: 'createnetwork',
                 component: CreatenetworkComponent,
                 outlet: 'sub'
-              }
+            },
+            {
+                path: 'about',
+                component: AboutComponent,
+                outlet:'sub'
+            }
         ]
     },
     {

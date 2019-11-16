@@ -30,7 +30,8 @@ import { NetworkcontentComponent } from './networkcontent/networkcontent.co
 import { CreatenetworkComponent } from './createnetwork/createnetwork.component';
 import { StorageServiceModule} from 'angular-webstorage-service';
 import {MatGridListModule} from '@angular/material/grid-list';
-import {MatButtonModule} from '@angular/material/button'
+import {MatButtonModule} from '@angular/material/button';
+import { AboutComponent } from './about/about.component'
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {MatButtonModule} from '@angular/material/button'
     DbslateComponent,
     NetworkfeedComponent,
 NetworkcontentComponent,
-CreatenetworkComponent
+CreatenetworkComponent,
+AboutComponent
   ],
   imports: [
     StorageServiceModule,

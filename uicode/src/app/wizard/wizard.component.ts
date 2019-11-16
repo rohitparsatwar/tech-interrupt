@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-wizard',
@@ -9,13 +10,14 @@ import { Router } from '@angular/router';
 })
 export class WizardComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  constructor(private route: Router, private dataService: DataService) { }
 
   ngOnInit() {
   }
 
-  completeProcess(){
-    this.route.navigate(['profile/COCA COLA' ]);
+  completeProcess() {
+    this.dataService.partnerName = "COCA COLA";
+    this.route.navigateByUrl('profile/COCA COLA/(sub:about)');
   }
 
 }

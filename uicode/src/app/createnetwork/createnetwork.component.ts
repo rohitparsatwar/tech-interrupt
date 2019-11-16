@@ -100,7 +100,7 @@ export class CreatenetworkComponent implements OnInit {
     let options = { headers: headers };
     this.http.post(createNetworkURL, body, options).subscribe(res => {
       this.partnerNetwork.refreshPage();
-      this.route.navigateByUrl('/createnetwork');
+      this.route.navigateByUrl('/profile/'+this.dataService.partnerName+'/(sub:about)');
       console.log(res);
     });
   }

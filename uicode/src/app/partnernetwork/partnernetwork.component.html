@@ -50,7 +50,7 @@
           </div>
           <div class="items-detail" *ngFor="let child of item.childMenuItems">
             <div *ngIf="child.enable">&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <button mat-button class="header-button" [routerLink]="[{outlets:{sub: 'createnetwork'}}]" [disabled]="!child.enable" (click)="showContent(child)">
+            <button mat-button class="header-button" [routerLink]="[{outlets:{sub: [child.id]}}]" [disabled]="!child.enable" (click)="showContent(child)">
               {{child.name}}
               <i class="material-icons" style="padding-top: 5px;">{{child.icon}}</i>
             </button>

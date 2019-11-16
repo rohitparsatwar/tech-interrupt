@@ -6,11 +6,13 @@ public class Partner {
 
 	private String id;
 	private String name;
+	private String organizationUnitName;
 	private String title;
 	private String subTitle;
 	private String about;
 	private String businessUnit;
 	private List<Address> address;
+	private List<Contact> contact;
 	private List<IChannel> inChannel;
 	private List<IChannel> outChannel;
 	private List<INotification> notifications;
@@ -93,6 +95,22 @@ public class Partner {
 
 	public void setNotifications(List<INotification> notifications) {
 		this.notifications = notifications;
+	}
+
+	public List<Contact> getContact() {
+		return contact;
+	}
+
+	public void setContact(List<Contact> contact) {
+		this.contact = contact;
+	}
+
+	public String getOrganizationUnitName() {
+		return organizationUnitName;
+	}
+
+	public void setOrganizationUnitName(String organizationUnitName) {
+		this.organizationUnitName = organizationUnitName;
 	}
 
 }
