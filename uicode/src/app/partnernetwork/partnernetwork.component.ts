@@ -76,6 +76,7 @@ export class PartnernetworkComponent implements OnInit {
     const getPartnerDetailsURL = "http://localhost:9090/pmaas/service/" + this.currentPartner;
     this.http.get(getPartnerDetailsURL).subscribe(res => {
       this.partnerData = this.preparePartnerData(res);
+      this.dataService.partnerData = this.partnerData;
     });
   }
 

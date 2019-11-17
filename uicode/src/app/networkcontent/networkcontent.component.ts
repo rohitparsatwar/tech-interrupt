@@ -38,6 +38,7 @@ export class NetworkcontentComponent implements OnInit {
   lastTimestamp: Date;
   ngOnInit() {
     this.networkName = this.dataService.networkId;
+    this.partnerData = this.dataService.partnerData;
     this.lastTimestamp = new Date();
     this.getNetworkDetailsURL();
     this.getNetworkFeedsURL();
