@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
    partnerName: string;
+   networkId: string;
 
   constructor() { }
 }

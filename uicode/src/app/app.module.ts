@@ -31,7 +31,9 @@ import { CreatenetworkComponent } from './createnetwork/createnetwork.compo
 import { StorageServiceModule} from 'angular-webstorage-service';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
-import { AboutComponent } from './about/about.component'
+import { AboutComponent } from './about/about.component';
+import { AcceptInviteComponent } from './accept-invite/accept-invite.component';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { AboutComponent } from './about/about.component'
     NetworkfeedComponent,
 NetworkcontentComponent,
 CreatenetworkComponent,
-AboutComponent
+AboutComponent,
+AcceptInviteComponent
   ],
   imports: [
     StorageServiceModule,
@@ -68,7 +71,8 @@ MatTabsModule,
     ReactiveFormsModule,
     MatExpansionModule,
     AppRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule
     
     
   ],

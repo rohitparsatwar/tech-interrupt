@@ -1,0 +1,32 @@
+<div class="example-card" style="padding: 10px;">
+    <mat-card *ngIf='enable'>
+        <mat-card-header>
+            <mat-card-title>Accept Invitation</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                You have been invited by {{partnerName}} to join it's B2B network.
+                Click on buttons below to accept or reject invations.
+            </p>
+        </mat-card-content>
+        <div>
+            <button class="btn btn-success" (click)="acceptInvitation()">Accept
+                Invitation</button>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <button class="btn btn-danger" (click)="rejectInvitation()">Reject
+                Invitation</button>
+        </div>
+    </mat-card>
+
+    <mat-card *ngIf='!enable'>
+        <mat-card-header>
+            <mat-card-title>Invitation Accepted</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                You are added to {{partnerName}}' s B2B Network.
+            </p>
+        </mat-card-content>
+    </mat-card>
+
+</div>

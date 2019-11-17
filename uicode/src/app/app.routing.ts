@@ -6,6 +6,8 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
 import { DbslateComponent } from './dbslate/dbslate.component';
 import { CreatenetworkComponent } from './createnetwork/createnetwork.component';
 import { AboutComponent } from './about/about.component';
+import { AcceptInviteComponent } from './accept-invite/accept-invite.component';
+import { NetworkcontentComponent } from './networkcontent/networkcontent.component';
 
 const routes: Routes = [
     {
@@ -25,7 +27,12 @@ const routes: Routes = [
             {
                 path: 'about',
                 component: AboutComponent,
-                outlet:'sub'
+                outlet: 'sub'
+            },
+            {
+                path: 'networkcontent',
+                component: NetworkcontentComponent,
+                outlet: 'sub'
             }
         ]
     },
@@ -40,6 +47,10 @@ const routes: Routes = [
     {
         path: 'dbslate',
         component: DbslateComponent,
+    },
+    {
+        path: 'network/:partnerName/:networkId/:partnerToAdd',
+        component: AcceptInviteComponent
     }
 ];
 

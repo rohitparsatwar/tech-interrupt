@@ -39,6 +39,7 @@ export class PartnernetworkComponent implements OnInit {
 
   showContent(item:MenuItem){
       this.content = item.name;
+      this.dataService.networkId = item.name;
       console.log(this.content);
   }
 

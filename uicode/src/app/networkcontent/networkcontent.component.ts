@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Network, Partner, Networkfeed, PartnernetworkComponent } from '../partnernetwork/partnernetwork.component';
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import { DataService } from '../data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-networkcontent',
@@ -10,14 +12,14 @@ import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 })
 export class NetworkcontentComponent implements OnInit {
 
-  @Input('networkName') networkName: string;
-  @Input('partnerData') partnerData: Partner;
+  private networkName: string;
+  private partnerData: Partner;
 
   networkData: Network;
 
   constructor(private http: HttpClient,
     @Inject(LOCAL_STORAGE) private storage: WebStorageService, 
-    private networkComponent: PartnernetworkComponent) {
+    private networkComponent: PartnernetworkComponent, private dataService:DataService, private route: ActivatedRoute) {
   }
 
   updateTimeStampInLocal(): void {
@@ -35,6 +37,7 @@ export class NetworkcontentComponent implements OnInit {
    
   lastTimestamp: Date;
   ngOnInit() {
+    this.networkName = this.dataService.networkId;
     this.lastTimestamp = new Date();
     this.getNetworkDetailsURL();
     this.getNetworkFeedsURL();
