@@ -1,7 +1,7 @@
 package pmaas.rest;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -11,9 +11,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
-import pmaas.dataservice.model.Partner;
 import pmaas.dataservice.model.network.Network;
 import pmaas.dataservice.model.network.NetworkFeed;
 import pmaas.dataservice.service.NetworkImpl;
@@ -43,11 +41,26 @@ public class NetworkApis {
 		networkImpl.addPartnerToNetwork(networkName, partnerName);
 	}
 
+	@Path("{networkName}/addPartnerToNetwork/{partnerName}/acceptinvite")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public void acceptInvite(@PathParam("networkName") String networkName,
+			@PathParam("partnerName") String partnerName) {
+		networkImpl.changeInvitationStatus(networkName, partnerName);
+	}
+
 	@Path("{networkName}/details")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Network getNetworkDetails(@PathParam("networkName") String networkName) {
 		return networkImpl.getNetworkDetails(networkName);
+	}
+
+	@Path("{networkName}/partners")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Map<String, String> getNetworkPartners(@PathParam("networkName") String networkName) {
+		return networkImpl.getNetworkPartners(networkName);
 	}
 
 	@Path("{networkName}/feeds")
