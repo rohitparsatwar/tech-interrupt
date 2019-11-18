@@ -1,4 +1,15 @@
-<div class="example-card" style="padding: 10px;">
+<mat-card>
+    <mat-card-header>
+       
+        <mat-card-title> <img style="width: 120px;margin-bottom: -10px;" src="https://delite.eur.ad.sag/wp-content/uploads/2019/05/SAG-LOGO-DO-1.svg">  
+          <span style="color:#1776BF">webMethods iPaaS MarketPlace
+          </span></mat-card-title>
+        <mat-card-subtitle>Welcome to webMethods iPaaS MarketPlace.</mat-card-subtitle>
+      </mat-card-header>
+</mat-card>
+
+
+<div class="example-card" style="padding: 10px; color: ;">
     <mat-card *ngIf='enable'>
         <mat-card-header>
             <mat-card-title>Accept Invitation</mat-card-title>
@@ -9,11 +20,12 @@
                 Click on buttons below to accept or reject invations.
             </p>
             <p> Access for following components will be given:</p>
-            <mat-list role="list">
-                <mat-list-item role="listitem">Item 1</mat-list-item>
-                <mat-list-item role="listitem">Item 2</mat-list-item>
-                <mat-list-item role="listitem">Item 3</mat-list-item>
-              </mat-list>
+            <ul>
+                <li><b>Corporation Details</b></li>
+                <li><b>Address</b></li>
+                <li><b>Contact</b></li>
+                <li><b>Channel Information</b></li>
+            </ul>
         </mat-card-content>
         <div>
             <button class="btn btn-success" (click)="acceptInvitation()">Accept
