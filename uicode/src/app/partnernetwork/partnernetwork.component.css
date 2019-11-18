@@ -164,6 +164,10 @@ html, body { height: auto;background-color: #fff !important }
 
   .mat-toolbar{
     background-color: #283e4a;
+    position: fixed;
+    display: block;
+    top: 0px;
+    z-index: 99999;
   }
   .header-search-input {
     border: none;
