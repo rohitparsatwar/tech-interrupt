@@ -74,7 +74,7 @@ export class NetworkcontentComponent implements OnInit {
   prepareNetworkData(networkData: Object): Network {
     let network = new Network(networkData["partnerName"], networkData["name"], networkData["description"]);
     network.partners = networkData["partners"];
-    network.infoList = networkData["infoList"];
+    network.infoList = networkData["networkInfo"];
     return network;
   }
 
@@ -94,5 +94,8 @@ export class NetworkcontentComponent implements OnInit {
       this.getNetworkFeedsURL();
       this.updateTimeStampInLocal();
     });
+  }
+  onNavigate(url: string){
+    window.open(url, "_blank");
   }
 }

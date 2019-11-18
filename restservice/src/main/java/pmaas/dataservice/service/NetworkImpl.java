@@ -25,6 +25,12 @@ public class NetworkImpl {
 		network.addPartnerToNetwork("SONY");
 		network.addPartnerToNetwork("COCA COLA");
 		NetworkInfo info = new NetworkInfo();
+		info.setName("Network Name");
+		info.setValue("COCA COLA B2B Network");
+		info.setType("text");
+		network.addNetworkInfo(info);
+		
+		info = new NetworkInfo();
 		info.setName("B2B Link");
 		info.setValue("https://vmb2bctp02/b2b");
 		info.setType("link");

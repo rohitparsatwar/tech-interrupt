@@ -36,15 +36,17 @@
         <mat-icon class="example-tab-icon">more_horiz</mat-icon>
         Details
       </ng-template>
-      <div class="details-header" style="margin-top: 50px;">
+      <div style="margin-top: 50px;" *ngIf="networkData != null || networkData!=undefined">
+        <div class="details-header" *ngFor="let info of networkData.infoList">
         <mat-card class="partner-card" style="width: 90%; margin: 10px auto;">
-          <mat-card-header *ngIf="networkData != null || networkData!=undefined" style="position:relative;">
-            Network Name: {{networkData.name}}
+          <mat-card-header *ngIf="info.type=='text'" style="position:relative;">
+            {{info.name}}:&nbsp;&nbsp;{{info.value}}
           </mat-card-header>
-          <mat-card-header *ngIf="networkData != null || networkData!=undefined" style="position:relative;">
-            B2B Link: http://vmb2bctp02/b2b
+          <mat-card-header *ngIf="info.type=='link'" style="position:relative;">
+            {{info.name}}:&nbsp;&nbsp;<a href="javascript:void(0);" (click)="onNavigate(info.value)">{{info.value}}</a>
           </mat-card-header>
         </mat-card>
+        </div>
       </div>
     </mat-tab>
   </mat-tab-group>
