@@ -13,13 +13,13 @@ html, body { height: auto;background-color: #fff !important }
 .down-card {
   margin-top: 5px !important;
   box-shadow: none;
-  width: 92%;
+  width: 90%;
   margin: auto;
   padding: 0px;
   padding-top: 10px !important;
   padding-bottom: 10px;
   display: flex;
-  /*background-color: cadetblue !important;*/
+  background-color: cadetblue !important;
   }
 
   .sideNav-card {

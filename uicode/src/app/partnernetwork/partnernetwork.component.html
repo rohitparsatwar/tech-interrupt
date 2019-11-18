@@ -43,16 +43,16 @@
       <mat-card class="sideNav-card">
         <div *ngFor="let item of sideMenuItems">
           <div class="items-detail">
-            <button mat-button class="header-button" [routerLink]="[{outlets:{sub: [item.id]}}]" [disabled]="!item.enable" (click)="showContent(item)">
+            <button mat-button style="width: 100%;text-align: left;" class="header-button" [routerLink]="[{outlets:{sub: [item.id]}}]" [disabled]="!item.enable" (click)="showContent(item)">
               {{item.name}}
-              <i class="material-icons" style="padding-top: 5px;">{{item.icon}}</i>
+              <i class="material-icons" style="margin-top: -5px;">{{item.icon}}</i>
             </button>
           </div>
           <div class="items-detail" *ngFor="let child of item.childMenuItems">
             <div *ngIf="child.enable">&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <button mat-button class="header-button" [routerLink]="[{outlets:{sub: [child.id]}}]" [disabled]="!child.enable" (click)="showContent(child)">
+            <button mat-button style="width: 100%;text-align: left;" class="header-button" [routerLink]="[{outlets:{sub: [child.id]}}]" [disabled]="!child.enable" (click)="showContent(child)">
               {{child.name}}
-              <i class="material-icons" style="padding-top: 5px;">{{child.icon}}</i>
+              <i class="material-icons" style="margin-top: -5px;">{{child.icon}}</i>
             </button>
           </div>
         </div>
