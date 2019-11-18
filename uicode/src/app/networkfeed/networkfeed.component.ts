@@ -26,7 +26,7 @@ export class NetworkfeedComponent implements OnInit {
   }
 
   getFeedPartnerDetailsURL(){
-    const getFeedPartnerDetailsURL = "http://localhost:9090/pmaas/service/" + this.feed.partnerName;
+    const getFeedPartnerDetailsURL = "http://10.60.14.147:9090/pmaas/service/" + this.feed.partnerName;
     this.http.get(getFeedPartnerDetailsURL).subscribe(res => {
       this.feedPartnerData = this.networkComponent.preparePartnerData(res);
     });
@@ -41,7 +41,7 @@ export class NetworkfeedComponent implements OnInit {
 
   addComment(comment: string){
     console.log(comment);
-    const getAddCommentURL = "http://localhost:9090/pmaas/networks/" + this.currentNetwork.name + "/feeds/"+this.feed.feedId + "/comments/"+comment+"/partner/" + this.currentPartner.name;
+    const getAddCommentURL = "http://10.60.14.147:9090/pmaas/networks/" + this.currentNetwork.name + "/feeds/"+this.feed.feedId + "/comments/"+comment+"/partner/" + this.currentPartner.name;
     this.http.get(getAddCommentURL).subscribe(res => {
       console.log("Comment Added!!");
       this.networkContentComponent.getNetworkFeedsURL();

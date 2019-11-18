@@ -26,7 +26,8 @@ export class AcceptInviteComponent implements OnInit {
     let partnerName = this.route.snapshot.paramMap.get('partnerName');
     let networkId = this.route.snapshot.paramMap.get('networkId');
     let partnerToAdd = this.route.snapshot.paramMap.get('partnerToAdd');
-    const createNetworkURL = "http://localhost:9090/pmaas/networks/" + networkId + "/addPartnerToNetwork/" + partnerToAdd;
+    const createNetworkURL = "http://10.60.14.147:9090/pmaas/networks/" + networkId + "/addPartnerToNetwork/" + partnerToAdd;
+    const updateInviteStatus = `http://10.60.14.147:9090/pmaas/networks/${networkId}/addPartnerToNetwork/${partnerToAdd}/acceptinvite`;
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Accept': 'application/json'
@@ -36,6 +37,9 @@ export class AcceptInviteComponent implements OnInit {
     this.http.get(createNetworkURL).subscribe(res => {
       this.enable = false;
       console.log(res);
+      this.http.get(updateInviteStatus).subscribe(res => {
+        console.log("Status Changed")
+      });
     });
   }
 
@@ -43,7 +47,7 @@ export class AcceptInviteComponent implements OnInit {
   //   let partnerName = this.route.snapshot.paramMap.get('partnerName');
   //   let networkId = this.route.snapshot.paramMap.get('networkId');
   //   let partnerToAdd = this.route.snapshot.paramMap.get('partnerToAdd');
-  //   const getPartnerNetworkURL = "http://localhost:9090/pmaas/networks/getPartnerNetworks/" + partnerName;
+  //   const getPartnerNetworkURL = "http://10.60.14.147:9090/pmaas/networks/getPartnerNetworks/" + partnerName;
   //   this.http.get(getPartnerNetworkURL).subscribe(res => {
   //     let networkData = this.getPassedNetwork(res, networkId);
   //     networkData['partners'].push(partnerToAdd);

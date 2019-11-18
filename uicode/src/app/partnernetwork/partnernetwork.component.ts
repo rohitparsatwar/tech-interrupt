@@ -73,7 +73,7 @@ export class PartnernetworkComponent implements OnInit {
   }
 
   getPartnerDetailsURL(){
-    const getPartnerDetailsURL = "http://localhost:9090/pmaas/service/" + this.currentPartner;
+    const getPartnerDetailsURL = "http://10.60.14.147:9090/pmaas/service/" + this.currentPartner;
     this.http.get(getPartnerDetailsURL).subscribe(res => {
       this.partnerData = this.preparePartnerData(res);
       this.dataService.partnerData = this.partnerData;
@@ -104,7 +104,7 @@ export class PartnernetworkComponent implements OnInit {
   }
 
   getPartnerNetworkURL(){
-    const getPartnerNetworkURL = "http://localhost:9090/pmaas/networks/getPartnerNetworks/" + this.currentPartner;
+    const getPartnerNetworkURL = "http://10.60.14.147:9090/pmaas/networks/getPartnerNetworks/" + this.currentPartner;
     this.http.get(getPartnerNetworkURL).subscribe(res => {
       this.initializeMenu();
       this.updateNetworkList(res);

@@ -18,7 +18,7 @@ export class AboutComponent implements OnInit {
   }
 
   getPartnerDetailsURL() {
-    const getPartnerDetailsURL = "http://localhost:9090/pmaas/service/" + this.dataService.partnerName;
+    const getPartnerDetailsURL = "http://10.60.14.147:9090/pmaas/service/" + this.dataService.partnerName;
     this.http.get(getPartnerDetailsURL).subscribe(res => {
       this.aboutText = res["about"];
     });

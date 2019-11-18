@@ -52,7 +52,7 @@ export class CreatenetworkComponent implements OnInit {
 
 
   getAllPartnersURL() {
-    const getAllPartnersURL = "http://localhost:9090/pmaas/service";
+    const getAllPartnersURL = "http://10.60.14.147:9090/pmaas/service";
     this.http.get(getAllPartnersURL).subscribe(res => {
       this.updatePartnerList(res);
       console.log(res);
@@ -87,7 +87,7 @@ export class CreatenetworkComponent implements OnInit {
   }
 
   createNetwork(f: NgForm) {
-    const createNetworkURL = "http://localhost:9090/pmaas/networks";
+    const createNetworkURL = "http://10.60.14.147:9090/pmaas/networks";
     this.network.partners = this.selectedPartners;
     this.network.partnerName = this.partnerName;
     let data = this.network;

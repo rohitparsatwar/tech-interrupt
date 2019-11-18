@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class SearchpartnerComponent implements OnInit {
 
   partners:Partner[] = new Array();
-  url:string = "http://localhost:9090/pmaas/service";
+  url:string = "http://10.60.14.147:9090/pmaas/service";
   constructor(private http: HttpClient) { }
 
   ngOnInit() {

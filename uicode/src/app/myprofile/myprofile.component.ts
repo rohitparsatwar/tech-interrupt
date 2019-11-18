@@ -24,7 +24,7 @@ export class MyprofileComponent implements OnInit {
 
   private setMyProfile(partnerName: string) {
 
-    const getPartnerDetailsURL = "http://localhost:9090/pmaas/service/" + partnerName;
+    const getPartnerDetailsURL = "http://10.60.14.147:9090/pmaas/service/" + partnerName;
     this.http.get(getPartnerDetailsURL).subscribe(res => {
       this.myprofile.corporationName = res["name"];
       this.myprofile.organizationName = res["businessUnit"];

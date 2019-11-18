@@ -18,7 +18,7 @@ export class DbslateComponent implements OnInit {
   processRequest() {
 
 
-    this.httpClient.post("http://localhost:9090/pmaas/dbslate",
+    this.httpClient.post("http://10.60.14.147:9090/pmaas/dbslate",
       {
         "sourceDb": "oracle",
         "targetDb": "mysql",
