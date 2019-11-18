@@ -49,7 +49,7 @@ const routes: Routes = [
         component: DbslateComponent,
     },
     {
-        path: 'network/:partnerName/:networkId/:partnerToAdd',
+        path: 'network/:networkId/addPartnerToNetwork/:partnerToAdd/acceptinvite',
         component: AcceptInviteComponent
     }
 ];

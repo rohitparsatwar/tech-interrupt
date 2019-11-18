@@ -1,16 +1,22 @@
 package pmaas.dataservice.model.network;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 
 public class Network {
 	private String partnerName;
 	private String name;
 	private String description;
+	@JsonProperty("infoList")
 	private List<NetworkInfo> infoList = new ArrayList<NetworkInfo>();
 	private Set<String> partners = new HashSet<String>();
+	private Map<String, String> partnerStatusMap = new HashMap<>();
 	
 	public String getName() {
 		return name;
@@ -114,5 +120,17 @@ public class Network {
 			this.type = type;
 		}
 		
+	}
+
+	/**
+	 * @param string
+	 * @param string2
+	 */
+	public void addPartnerStatus(String partnerName, String status) {
+		this.partnerStatusMap.put(partnerName, status);
+	}
+	
+	public Map<String, String> getPartnerStatusMap(){
+		return this.partnerStatusMap;
 	}
 }

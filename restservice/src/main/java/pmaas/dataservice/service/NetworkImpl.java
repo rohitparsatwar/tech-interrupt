@@ -16,6 +16,8 @@ public class NetworkImpl {
 	static Map<String, Set<Network>> partnerNetworkCache = new HashMap<String, Set<Network>>();
 	static Map<String, Network> networkCache = new HashMap<String, Network>();
 	static Map<String, List<NetworkFeed>> networkFeedsCache = new HashMap<String, List<NetworkFeed>>();
+	static String APPROVED="Approved";
+	static String PENDING="Pending";
 	
 	static {
 		Network network = new Network();
@@ -23,7 +25,10 @@ public class NetworkImpl {
 		network.setName("COCA COLA B2B Network");
 		network.setDescription("This network is created by COCA COLA for its partners!");
 		network.addPartnerToNetwork("SONY");
+		network.addPartnerStatus("SONY","Pending");
+		network.addPartnerToNetwork("SONY");
 		network.addPartnerToNetwork("COCA COLA");
+		network.addPartnerStatus("COCA COLA","Pending");
 		NetworkInfo info = new NetworkInfo();
 		info.setName("Network Name");
 		info.setValue("COCA COLA B2B Network");
@@ -69,11 +74,16 @@ public class NetworkImpl {
 	public void addPartnerToNetwork(String networkName, String partnerName) {
 		Network network = networkCache.get(networkName);
 		network.addPartnerToNetwork(partnerName);
+		network.addPartnerStatus(partnerName, PENDING);
 		addPartnerNetwork(partnerName, network);
 	}
 
 	public Network getNetworkDetails(String networkName) {
 		return networkCache.get(networkName);		
+	}
+
+	public Map<String, String> getNetworkPartners(String networkName) {
+		return networkCache.get(networkName).getPartnerStatusMap();		
 	}
 
 	public List<NetworkFeed> getNetworkFeeds(String networkName, int startIndex) {
@@ -116,5 +126,14 @@ public class NetworkImpl {
 		}
 		if(feedObj == null) return;
 		feedObj.addComment(partnerName, comment);
+	}
+
+	/**
+	 * @param networkName
+	 * @param partnerName
+	 */
+	public void changeInvitationStatus(String networkName, String partnerName) {
+		Network network = networkCache.get(networkName);
+		network.addPartnerStatus(partnerName, APPROVED);
 	}
 }
