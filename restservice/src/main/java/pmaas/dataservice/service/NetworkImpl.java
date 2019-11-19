@@ -89,6 +89,9 @@ public class NetworkImpl {
 	public List<NetworkFeed> getNetworkFeeds(String networkName, int startIndex) {
 		List<NetworkFeed> feeds = networkFeedsCache.get(networkName);
 		List<NetworkFeed> filteredFeeds = new ArrayList<NetworkFeed>();
+		if(feeds==null) {
+			return filteredFeeds;
+		}
 		for(int i = feeds.size()-1; i >= startIndex; i--) {
 			filteredFeeds.add(feeds.get(i));
 		}
