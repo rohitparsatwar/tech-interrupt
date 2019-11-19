@@ -21,31 +21,33 @@ public class NetworkImpl {
 	
 	static {
 		Network network = new Network();
-		network.setPartnerName("COCA COLA");
-		network.setName("COCA COLA B2B Network");
-		network.setDescription("This network is created by COCA COLA for its partners!");
-		network.addPartnerToNetwork("SONY");
-		network.addPartnerStatus("SONY","Pending");
-		network.addPartnerToNetwork("SONY");
-		network.addPartnerToNetwork("COCA COLA");
-		network.addPartnerStatus("COCA COLA","Pending");
+		network.setPartnerName("SONY");
+		network.setName("SONY API Gateway Network");
+		network.setDescription("This network is created by SONY for its partners to exchange APIs!");
+		network.addPartnerToNetwork("7ELEVEN");
+		network.addPartnerStatus("7ELEVEN",APPROVED);
+		//network.addPartnerToNetwork("COCA COLA");
+		//network.addPartnerStatus("COCA COLA",PENDING);
 		NetworkInfo info = new NetworkInfo();
 		info.setName("Network Name");
-		info.setValue("COCA COLA B2B Network");
+		info.setValue("SONY API Gateway Network");
 		info.setType("text");
 		network.addNetworkInfo(info);
-		
+		info = new NetworkInfo();
+		info.setName("Network Owner");
+		info.setValue("SONY Enterprise");
+		info.setType("text");
 		info = new NetworkInfo();
 		info.setName("B2B Link");
 		info.setValue("https://vmb2bctp02/b2b");
 		info.setType("link");
 		network.addNetworkInfo(info);
 		createPartnerNetworkStatic(network);
-		String feedId = addFeedStatic(network.getName(), network.getPartnerName(), "Hello partners.. Welcome to B2B!!");
-		addFeedStatic(network.getName(), "SONY", "Hi Coca Cola... How are YOu!!");
 		
-		addFeedCommentStatic(network.getName(), "SONY", feedId, "Thanks Coca Cola! :)");
-		addFeedCommentStatic(network.getName(), "SONY", feedId, "Or Sunao...! :)");
+		String feedId = addFeedStatic(network.getName(), network.getPartnerName(), "Hello partners.. Welcome to API Gateway!!");
+		addFeedCommentStatic(network.getName(), "COCA COLA", feedId, "Thanks SONY for adding me! :)");
+		
+		addFeedStatic(network.getName(), "COCA COLA", "Hi SONY... Not able to access GET /applications API. Could you please check.");
 	}
 	public List<Network> getPartnerNetworks(String partnerName) {
 		return new ArrayList<Network>(partnerNetworkCache.get(partnerName));
@@ -89,6 +91,9 @@ public class NetworkImpl {
 	public List<NetworkFeed> getNetworkFeeds(String networkName, int startIndex) {
 		List<NetworkFeed> feeds = networkFeedsCache.get(networkName);
 		List<NetworkFeed> filteredFeeds = new ArrayList<NetworkFeed>();
+		if(feeds==null) {
+			return filteredFeeds;
+		}
 		for(int i = feeds.size()-1; i >= startIndex; i--) {
 			filteredFeeds.add(feeds.get(i));
 		}

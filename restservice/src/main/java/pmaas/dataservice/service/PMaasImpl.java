@@ -47,11 +47,11 @@ public class PMaasImpl {
 						+ "Learn more at Coca-Cola Journey at www.coca-colacompany.com and follow us on Twitter (@CocaColaCo), Instagram (@thecocacolaco), Facebook (@thecocacolaco) and LinkedIn.");
 		partnerCache.add(cocacola);
 
-		Partner sony = new Partner();
-		sony.setName("SONY");
-		sony.setTitle("Sony Electronics");
-		sony.setSubTitle("Consumer Electronics  North America, CA  243,120 followers");
-		sony.setAbout("WE ARE SONY\r\n" + "\r\n"
+		Partner profile = new Partner();
+		profile.setName("SONY");
+		profile.setTitle("Sony Electronics");
+		profile.setSubTitle("Consumer Electronics  North America, CA  243,120 followers");
+		profile.setAbout("WE ARE SONY\r\n" + "\r\n"
 				+ "Our spirit of innovation and challenge has created those special moments that make people say ‘wow’.\r\n"
 				+ "\r\n" + "How? By harnessing the world’s most powerful source of creativity: our people.\r\n" + "\r\n"
 				+ "Because ‘wow’ experiences are never a product of processes or procedures. They’re only made possible by liberating the passion and potential of the truly talented to do what excites them most.\r\n"
@@ -62,8 +62,20 @@ public class PMaasImpl {
 				+ "We are a global organization and seek individuals from a variety of generations, socioeconomic and educational backgrounds, and sexual orientations. Our employees are courageous, unique and diverse. They’re comfortable expressing their thoughts and opinions freely, and possess an unwavering passion and pride to deliver exceptional experiences to our customers.  \r\n"
 				+ "\r\n"
 				+ "See what our employees are saying about their life at Sony by checking out the hashtag #TeamSony online. If you'd like to join our team,  visit www.sonyjobs.com or our Global Careers page at http://www.sony.net/SonyInfo/Careers.");
-		sony.setBusinessUnit("Electronics");
-		partnerCache.add(sony);
+		profile.setBusinessUnit("Electronics");
+		partnerCache.add(profile);
+		
+		profile = new Partner();
+		profile.setName("7ELEVEN");
+		profile.setTitle("7-Eleven Worldwide");
+		profile.setSubTitle("Retail  Richmond, VIC  19,918 followers");
+		profile.setAbout("7-Eleven Stores Pty Ltd, Australia’s first choice in convenience, is a private company owned by the Withers and Barlow family.  The company has a license to operate and franchise 7-Eleven stores in Australia from the US based 7-Eleven Inc.  \r\n" + 
+				"\r\n" + 
+				"The first Australian store was opened in August 1977.  Today 7-Eleven Stores Pty Ltd. operates more than 670 stores in Queensland, New South Wales, Victoria, the Australian Capital Territory, and Western Australia. \r\n" + 
+				"\r\n" + 
+				"Through its store network, 7-Eleven Stores Pty Ltd. conducts more than 228 million transactions a year, serving an average seven customers per second, generating sales approaching $4 billion.");
+		profile.setBusinessUnit("Retail");
+		partnerCache.add(profile);
 
 	}
 

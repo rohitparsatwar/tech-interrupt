@@ -38,7 +38,6 @@ public class PMaasApis {
 	public Response createPartner(Partner partner) {
 		serviceImpl.createNewParter(partner);
 		return Response.ok(partner.getName()).build();
-
 	}
 
 }

@@ -94,12 +94,17 @@ export class PartnernetworkComponent implements OnInit {
     let cocacolaProfileBgImg = "https://media.licdn.com/dms/image/C4D0BAQEhDK7h-cDCAg/company-logo_400_400/0?e=1579132800&v=beta&t=9htXPvlyRU_L5uVe1KTW0WjVct4fkFRFm3jVsplUgdU";
     let sonyProfileImg = "https://77snszqv.media.zestyio.com/FX9-11.f1cb27a519bdb5b6ed34049a5b86e317.jpg";
     let sonyProfileBgImg = "https://media.licdn.com/dms/image/C4D0BAQHfsUDXyfj9lQ/company-logo_400_400/0?e=1579132800&v=beta&t=TtXsSt8MrgZtJje-fGIOGrAsKSrHOnFW_E0qU0-osKs";
+    let elevenProfileBgImg = "https://media.licdn.com/dms/image/C560BAQEfMYWAT3H0WA/company-logo_400_400/0?e=1582156800&v=beta&t=3ptXO7y_AOMMqmwVG9xd0PenL5MgTXqPC2i_JPQrL-U";
+    let elevenProfileImg = "https://media.licdn.com/dms/image/C561BAQGbg8vKHzDKWw/company-background_10000/0?e=1574251200&v=beta&t=9S9Yx3BrSDRMf70-SeP1D253199Z7QCl582F8IUZ-BQ";
     if(partner.name == 'COCA COLA'){
       partner.profileImgURL = cocacolaProfileImg;
       partner.profileBgImgURL = cocacolaProfileBgImg;
     }else if(partner.name == 'SONY'){
       partner.profileImgURL = sonyProfileImg;
       partner.profileBgImgURL = sonyProfileBgImg;
+    }else if(partner.name == '7ELEVEN'){
+      partner.profileImgURL = elevenProfileImg;
+      partner.profileBgImgURL = elevenProfileBgImg;
     }
   }
 
