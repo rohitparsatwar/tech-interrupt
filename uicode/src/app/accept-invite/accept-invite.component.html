@@ -25,6 +25,18 @@
                 <li><b>Contact</b></li>
                 <li><b>Channel Information</b></li>
             </ul>
+                <div class="input-section">
+                    <p>
+                        You need to fill in the below details before accepting the invite
+                        <b style="color:red;">- * mandatory</b>
+                    </p>
+                    <mat-form-field style="width: 100%;">
+                      <input matInput placeholder="ExternalID Type" value="DUNS" required>
+                    </mat-form-field>                  
+                    <mat-form-field style="width: 100%;">
+                        <input matInput placeholder="ExternalID value" value="11-111-1111" required>
+                    </mat-form-field>
+                  </div>
         </mat-card-content>
         <div>
             <button class="btn btn-success" (click)="acceptInvitation()">Accept
