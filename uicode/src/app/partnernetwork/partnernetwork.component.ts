@@ -127,6 +127,32 @@ export class PartnernetworkComponent implements OnInit {
     this.getPartnerNetworkURL();
   }
 
+  allPartners: Partner[] = [];
+  showPartnerList: boolean;
+  getAllPartnersURL() {
+    this.allPartners = [];
+    const getAllPartnersURL = "http://10.60.14.147:9090/pmaas/service";
+    this.http.get(getAllPartnersURL).subscribe(res => {
+      this.updatePartnerList(res);
+      console.log(res);
+    });
+  }
+
+  updatePartnerList(res) {
+    for (let partnerData of res) {
+      let partner = this.preparePartnerData(partnerData);
+      this.allPartners.push(partner);
+    }
+    this.showPartnerList = true;
+  }
+  
+  removePartnerList(){
+    this.showPartnerList = false;
+  }
+
+  showProfile(partnerName: String){
+    window.location.href = "http://localhost:4200/profile/"+partnerName + "/(sub:about)";
+  }
 }
 
 export class Partner {

@@ -4,11 +4,23 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdxR4kezXFzPqVPy_nH7-_xNiJtz1enrNLfx-OZJo2K3dEbjte" style="height: 35px; width: 35px;border-radius: 10%;">
         <span style="height: 35px; margin-left: 5px; width: 400px; position: relative;">
             <!-- <input type="search" style="height: 45px; width: 45px;" [(ngModel)]="search"> -->
-            <input class="header-search-input" type="text" placeholder="Search" aria-label="Search" mdbInput>
+            <input class="header-search-input" type="text" placeholder="Search" aria-label="Search" mdbInput (blur)="invalid_removePartnerList()" (focus)="getAllPartnersURL()">
             <i class="material-icons" style="color: rgba(0,0,0,.87); position: absolute; top: 7px; right: 0px;">search</i>
         </span>
     </mat-toolbar-row>
   </mat-toolbar>
+  <div *ngIf="showPartnerList" style="position:absolute;top:50px;left:55px;z-index:99999;">
+    <mat-card class="search-partner-card" style="width: 400px;">
+      <div class="search-partner-header" *ngFor="let partner of allPartners">
+        <mat-card-header style="position:relative;" (click)="showProfile(partner.name)">
+          <div mat-card-avatar class="header-image" style="height: 50px;width:50px;margin:0;"><img *ngIf="partner.profileBgImgURL" [src]="partner.profileBgImgURL" style="height: 100%; width: 100%;"></div>
+          <mat-card-title>{{partner.title}}</mat-card-title>
+          <mat-card-subtitle style="margin-bottom: 0px;">{{partner.businessUnit}}</mat-card-subtitle>
+        </mat-card-header>
+        <hr/>
+      </div>
+    </mat-card>
+  </div>
   <div style="padding-top: 70px;">
     <mat-card class="partner-card">
       <div class="mat-card-image" tabindex="-1" style="height: 191px;">
