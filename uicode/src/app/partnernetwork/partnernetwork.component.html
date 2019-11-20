@@ -73,8 +73,8 @@
       <mat-card class="sideNav-card">
         <p style="font-size: medium;padding: 5px 0px 0px 15px;font-weight: 500;">Recommendations</p>
         <div class="search-partner-header" *ngFor="let partner of allPartners">
-          <hr/>
-          <mat-card-header style="position:relative;width: 100%;padding: 5px 0px 5px 5px;" (click)="showProfile(partner.name)">
+          <hr  *ngIf="partnerData.name!=partner.name"/>
+          <mat-card-header  *ngIf="partnerData.name!=partner.name" style="position:relative;width: 100%;padding: 5px 0px 5px 5px;" (click)="showProfile(partner.name)">
             <div mat-card-avatar class="header-image" style="height: 50px;width:50px;margin:0;"><img *ngIf="partner.profileBgImgURL" [src]="partner.profileBgImgURL" style="height: 100%; width: 100%;"></div>
             <mat-card-title style="font-size: medium;">{{partner.title}}</mat-card-title>
             <mat-card-subtitle style="margin-bottom: 0px;">{{partner.businessUnit}}</mat-card-subtitle>
