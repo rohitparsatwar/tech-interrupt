@@ -69,6 +69,7 @@ export class PartnernetworkComponent implements OnInit {
     this.initializeMenu();
     this.getPartnerDetailsURL();
     this.getPartnerNetworkURL();
+    this.getAllPartnersURL();
     
   }
 
@@ -129,6 +130,10 @@ export class PartnernetworkComponent implements OnInit {
 
   allPartners: Partner[] = [];
   showPartnerList: boolean;
+  showAllPartnerList(){
+    this.showPartnerList = true;
+  }
+
   getAllPartnersURL() {
     this.allPartners = [];
     const getAllPartnersURL = "http://10.60.14.147:9090/pmaas/service";
@@ -143,7 +148,6 @@ export class PartnernetworkComponent implements OnInit {
       let partner = this.preparePartnerData(partnerData);
       this.allPartners.push(partner);
     }
-    this.showPartnerList = true;
   }
   
   removePartnerList(){

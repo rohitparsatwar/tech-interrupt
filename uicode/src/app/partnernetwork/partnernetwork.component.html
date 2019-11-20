@@ -4,12 +4,12 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdxR4kezXFzPqVPy_nH7-_xNiJtz1enrNLfx-OZJo2K3dEbjte" style="height: 35px; width: 35px;border-radius: 10%;">
         <span style="height: 35px; margin-left: 5px; width: 400px; position: relative;">
             <!-- <input type="search" style="height: 45px; width: 45px;" [(ngModel)]="search"> -->
-            <input class="header-search-input" type="text" placeholder="Search" aria-label="Search" mdbInput (blur)="invalid_removePartnerList()" (focus)="getAllPartnersURL()">
+            <input class="header-search-input" type="text" placeholder="Search" aria-label="Search" mdbInput (blur)="invalid_removePartnerList()" (focus)="showAllPartnerList()">
             <i class="material-icons" style="color: rgba(0,0,0,.87); position: absolute; top: 7px; right: 0px;">search</i>
         </span>
     </mat-toolbar-row>
   </mat-toolbar>
-  <div *ngIf="showPartnerList" style="position:absolute;top:50px;left:55px;z-index:99999;">
+  <div *ngIf="showPartnerList" style="position:fixed;top:50px;left:55px;z-index:99999;">
     <mat-card class="search-partner-card" style="width: 400px;">
       <div class="search-partner-header" *ngFor="let partner of allPartners">
         <mat-card-header style="position:relative;" (click)="showProfile(partner.name)">
@@ -52,7 +52,8 @@
       </mat-card-actions>
     </mat-card>
     <mat-card class="down-card">
-      <mat-card class="sideNav-card">
+      <div class="sideNav-card-level" style="width: 20%;">
+      <mat-card class="sideNav-card marginBottom">
         <div *ngFor="let item of sideMenuItems">
           <div class="items-detail">
             <button mat-button style="width: 100%;text-align: left;" class="header-button" [routerLink]="[{outlets:{sub: [item.id]}}]" [disabled]="!item.enable" (click)="showContent(item)">
@@ -69,6 +70,18 @@
           </div>
         </div>
       </mat-card>
+      <mat-card class="sideNav-card">
+        <p style="font-size: medium;padding: 5px 0px 0px 5px;font-weight: 500;">Recommendations</p>
+        <div class="search-partner-header" *ngFor="let partner of allPartners">
+          <hr/>
+          <mat-card-header style="position:relative;width: 100%;padding: 5px 0px 5px 5px;" (click)="showProfile(partner.name)">
+            <div mat-card-avatar class="header-image" style="height: 50px;width:50px;margin:0;"><img *ngIf="partner.profileBgImgURL" [src]="partner.profileBgImgURL" style="height: 100%; width: 100%;"></div>
+            <mat-card-title style="font-size: medium;">{{partner.title}}</mat-card-title>
+            <mat-card-subtitle style="margin-bottom: 0px;">{{partner.businessUnit}}</mat-card-subtitle>
+          </mat-card-header>
+        </div>
+      </mat-card>
+      </div>
       <mat-card class="content-card">
 
         <router-outlet name='sub'></router-outlet>
