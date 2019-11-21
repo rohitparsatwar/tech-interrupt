@@ -155,7 +155,7 @@ export class PartnernetworkComponent implements OnInit {
   }
 
   showProfile(partnerName: String){
-    window.location.href = "http://localhost:4200/profile/"+partnerName + "/(sub:about)";
+    window.location.href = "http://10.60.14.147:4200/profile/"+partnerName + "/(sub:about)";
   }
 }
 
